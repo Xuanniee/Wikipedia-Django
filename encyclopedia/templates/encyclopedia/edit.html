@@ -1,0 +1,30 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Edit Wiki Entry
+{% endblock %}
+
+{% block body %}
+    <h1>Edit this Wiki Page</h1>
+    <!-- Using Reverse Function to send to Edit not Entry!!! and Pass in the Wiki Name as the Title for the URL -->
+    <!-- If I had sent to Entry, the changes won't be saved. By sending to Edit, I am then redirected to Entry -->
+    <form method="POST" action="{% url 'encyclopedia:edit' name %}" class="form_fields">
+        <!-- CSRF Token to prevent Hacking -->
+        {% csrf_token %}
+        <!-- 2 Input Fields with Existing Data Filled in -->
+        <div class="form_fields">
+            {{ form.wiki_name.label }}
+            <h4>{{ name }}</h4>
+        </div>
+        <div class="form_fields">
+            {{ form.wiki_details.label }}
+            {{ form.wiki_details }}
+        </div>
+        <div>
+            <!-- Empty Space-->
+        </div>
+        <div class="submit-button" style="margin-top: 1%;">
+            <button class="btn btn-secondary" type="submit">Submit Changes</button>
+        </div>
+    </form>
+{% endblock %}

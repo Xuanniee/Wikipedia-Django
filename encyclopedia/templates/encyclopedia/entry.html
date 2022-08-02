@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title%}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+    <!-- Add an Edit Button -->
+    <div>
+        <!-- Since my Edit Function needs a 2nd argument title, I need to provide it in the URL somehow -->
+        <a role="button" class="btn btn-secondary" href="{% url 'encyclopedia:edit' title %}">Edit</a>
+        <!-- <input type="hidden" value="{{ title }}"> -->
+    </div>
+    <div>
+        {{ content | safe }}
+    </div>
+{% endblock %}

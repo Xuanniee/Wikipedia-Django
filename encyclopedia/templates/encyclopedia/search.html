@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block body %}
+    <h1>Sorry, the page you're looking for does not exists!!!</h1>
+    <h5>Here are some related entries:</h5>
+
+    <!-- For Loop to Loop through Entries that are a substring -->
+    <ul>
+        {% for title in titles %}
+        <li><a href="/wiki/{{ title }}">{{ title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

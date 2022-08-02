@@ -1,0 +1,32 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Create New Page
+{% endblock %}
+
+{% block body %}
+    <h1> Create a New Page for the Wiki </h1>
+    <!-- Form for User to Submit Page Name and Page Details -->
+    <form action="{% url 'encyclopedia:create' %}" class="form_fields" method="post">
+        <!-- CSRF Token to prevent Hacking -->
+        {% csrf_token %}
+        <!-- Substituting with the Django Class I created instead of manually writing everything down -->
+        <div name="create_form_title" class="form_fields">
+            <!-- New Wiki Page's Name -->
+            {{ create_form.wiki_name.label }}
+        </div>
+        <div class="form_fields">
+            {{ create_form.wiki_name }}
+        </div>
+        <div name="create_form_details" class="form_fields">
+            <!-- New Wiki Page's Details -->
+            {{ create_form.wiki_details.label }}
+            {{ create_form.wiki_details }}
+        </div>
+        <div class="form_fields">
+            <!-- Button to Submit -->
+            <button class="btn btn-secondary" style="margin-top: 1%;" type="submit">Submit</button>
+        </div>
+    </form>
+
+{% endblock %}
