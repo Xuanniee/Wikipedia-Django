@@ -52,6 +52,7 @@ Django, Python-Markdown2 has to be installed before trying to use this web appli
 * Learnt about URL Routes
 * Learnt how to write and use Django Forms
 * Learnt about Sessions to store data for Users.
+* Learnt about the Bootstrap Framework.
 
 ## Video Link
 https://youtu.be/8Dw67lThVFY
